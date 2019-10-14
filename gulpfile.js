@@ -1,12 +1,14 @@
-/**
- * @file
- */
-
 "use strict";
-
-var config_local = require('./config.local.json'),
-    config_default = require('./config.default.json'),
-    config = Object.assign(config_default, config_local),
+try {
+    var config_local = require('./config.local.json');
+} catch (error) {
+}
+try {
+    var config_project = require('./src/config.project.json');
+} catch (error) {
+}
+var config_default = require('./config.default.json'),
+    config = Object.assign(config_default, config_project, config_local),
 
     // Include nodejs default libs.
     gulp = require('gulp'),
@@ -14,7 +16,7 @@ var config_local = require('./config.local.json'),
     // Include vendor libs.
     autoprefixer    = require('gulp-autoprefixer'),
     browserSync     = require('browser-sync').create(),
-    gulpif = require('gulp-if'),
+    gulpif          = require('gulp-if'),
     rename          = require('gulp-rename'),
     sass            = require('gulp-sass'),
     sourcemaps      = require('gulp-sourcemaps');
