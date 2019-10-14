@@ -44,7 +44,7 @@ function watch() {
 
     browserSync.init({
         host: config.c9url,
-        logLevel: "debug",
+        logLevel: "silent",
         open: false,
         port: config.port,
         proxy: config.url,
