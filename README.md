@@ -9,8 +9,8 @@ With this combination, we don't need to compile manually every time we want to t
 # Installation
 ```
 cd <YOUR_THEME_DIR>
-git clone git@github.com:julien-/gulp_browsersync.git
-cd gulp_browsersync
+git clone git@github.com:julien-/gulp_browsersync.git gulp
+cd gulp
 npm install
 ```
 
