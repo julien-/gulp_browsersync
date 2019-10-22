@@ -1,6 +1,6 @@
 "use strict";
 try {
-    var config_local = require('./config.local.json');
+    var config_local = require('./src/config.local.json');
 } catch (error) {
 }
 try {
