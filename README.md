@@ -23,13 +23,16 @@ I choose the second option to keep link between Front-end and Back-end repositor
 <details><summary>The "gulp" branch does not exist</summary><p>
 
 ```
-mkdir src
-git remote get-url --all origin | git clone `xargs` src
-rm -rf src/*
-cd src
+cd ..
+git remote get-url --all origin | git clone `xargs` gulp/src
+rm -rf gulp/src/*
+cd gulp/src
 git checkout -b gulp
+echo "see https://github.com/julien-/gulp_browsersync" > README.md
+echo "config.local.json" > .gitignore
+mkdir scss
 git add .
-git commit -m "GULP: Remove useless files"
+git commit -m "GULP: Remove useless files."
 ```
 </p></details>
 <details><summary>The "gulp" branch exists</summary><p>
