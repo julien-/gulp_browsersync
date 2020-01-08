@@ -3,7 +3,7 @@
 	"sourcemaps": false,
 	"dest_file"	: "mytheme.min.css",
 	"dest_dir"	: "../css",
-	"src_dir"	: "src/scss",
+	"src_dir"	: "scss",
 	"src_file"	: "main.scss",
 	"url" : "http://localhost:8080",
 	"port": 8081,
