@@ -1,10 +1,10 @@
 "use strict";
 try {
-    var config_local = require('./src/config.local.json');
+    var config_local = require('./config.local.json');
 } catch (error) {
 }
 try {
-    var config_project = require('./src/config.project.json');
+    var config_project = require('./config.project.json');
 } catch (error) {
 }
 var config_default = require('./config.default.json'),
