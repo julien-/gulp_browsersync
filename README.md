@@ -39,7 +39,7 @@ Is there files to remove for the current branch "gulp" (for sample ".jenkinsfile
 git commit -m "First commit: remove useless files."
 ```
 
-## Set config files
+# Set config files
 1.  _config.**default**.json_ : original file from Library cloned ([https://github.com/julien-/gulp_browsersync](https://github.com/julien-/gulp_browsersync))
 2.  _config.**project**.json_ : Overrides  _config.**default**.json._ Set default config for future builds for this project and for your colleagues.
 3.  _config.**local**.json_ : Overrides  _config.**project**.json._ Non-versioned file, only used in your local environment
@@ -72,7 +72,7 @@ node_modules" > .gitignore
 ```
 </p></details>
 
-### Set local config
+## Set local config
 ```
 echo '{
     "c9url" : "1234.vfs.cloud9.eu-west-1.amazonaws.com",
@@ -108,13 +108,13 @@ DOCKER : `sudo salt-call state.apply profiles.docker`
 
 </p></details>
 
-## Install gulp dependencies
+# Install gulp dependencies
 Run the installation of gulp
 ```
 npm install
 ```
 
-## Run
+# Run
 
 ```
 gulp
