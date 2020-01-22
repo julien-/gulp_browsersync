@@ -1,6 +1,6 @@
 
 
-To be more productive we will use the task manager **[Gulp](https://gulpjs.com/)** and the tool **[BrowserSync](https://www.browsersync.io/)**. According our configuration ( _gulpfile.js_ ) :
+To be more productive we will use the task manager **[Gulp](https://gulpjs.com/)** and the tool **[BrowserSync](https://www.browsersync.io/)**. ( see _gulpfile.js_ ) :
 
 -   **Gulp**  triggers your .**SCSS** files changes and each time you save one of this files,  it will compile into  **CSS**
 -   **BrowserSync**  triggers **CSS** changes and inject them into your browsers
