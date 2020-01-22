@@ -35,7 +35,9 @@ git add .
 ll
 ```
 Is there files to remove for the current branch "gulp" (for sample ".jenkinsfile") ? If no, you can commit
-`git commit -m "First commit: remove useless files."`
+```
+git commit -m "First commit: remove useless files."
+```
 
 ## Set config files
 1.  _config.**default**.json_ : original file from Library cloned ([https://github.com/julien-/gulp_browsersync](https://github.com/julien-/gulp_browsersync))
@@ -82,9 +84,7 @@ c9 config.local.json
 *Adapt your _config.**local**.json_ data values.*
 
 <details><summary>Drupal developers</summary><p>
-### Edit settings.php $base_url
-
-To not have troubles of Fonts, update your settings.php by adding the port to your `$base_url` _(do not hesitate to chmod 777 your settings.php in development environment)_ :
+To not have troubles of Fonts, update your *settings.php* by adding the port to your `$base_url` _(do not hesitate to chmod 777 your settings.php in development environment)_ :
 
 ```
 chmod 777 build/sites/default/settings.php
@@ -96,7 +96,7 @@ $base_url = 'https://toto.com:8081/%PROJECT_FOLDER%/build';
 ```
 </p></details>
 
-**If you want to access to your project on 8081 port (*default*) gulp have to be running**
+:warning: **If you want to access to your project on 8081 port (*default*) gulp have to be running** :warning:
 
 <details><summary>Are your ports free?</summary><p>
 Cloud9 open only 8080 8081 and 8082 ports. So you have to use one of this port
@@ -131,3 +131,8 @@ Open your URL in the 8081 port and you will use BrowserSync tool that allow you 
 
 # Submit your changes
 Commit your changes in the worktree (gulp branch) and don't forget to commit the .**CSS** changes in your "feature" branch project (without the .**SCSS** files)
+
+
+
+#
+> In this documentation `c9` command is used in Cloud9 environment to open a file
