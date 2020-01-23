@@ -76,7 +76,7 @@ node_modules" > .gitignore
 ```
 echo '{
     "c9url" : "1234.vfs.cloud9.eu-west-1.amazonaws.com",
-    "sourcemaps": false,
+    "sourcemaps": false
 }
 ' > config.local.json
 c9 config.local.json
