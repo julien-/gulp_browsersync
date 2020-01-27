@@ -13,7 +13,7 @@ We don't want to have .**SCSS** files in production. So we can choose
 
 I choosed the second option to keep link between Front-end and Back-end repositories.
 
-# Git "gulp" branch exists ?
+# Git "gulp" branch exists in the project to clone ?
 
 <details><summary>NO</summary><p>
 
@@ -63,12 +63,6 @@ cd gulp
 git clone https://github.com/julien-/gulp_browsersync
 mv gulp_browsersync/* .
 rm -rf gulp_browsersync/
-echo "config.default.json
-config.local.json
- 
-gulpfile.js
-package.json
-node_modules" > .gitignore
 ```
 </p></details>
 
