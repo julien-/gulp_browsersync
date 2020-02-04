@@ -8,7 +8,17 @@ try {
 } catch (error) {
 }
 var config_default = require('./config.default.json'),
-    config = Object.assign(config_default, config_project, config_local),
+    config = Object.assign({}, config_default, config_project, config_local),
+    
+    config_minified = Object.assign({}, config, {
+        dest_file : config.dest_file.replace(/.css/, '.min.css').replace(/.min/, ''),
+        outputStyle : 'compressed',
+    }),
+
+    config_expanded = Object.assign({}, config, {
+        dest_file : config.dest_file.replace(/.min/, ''),
+        outputStyle : 'expanded',
+    }),
 
     // Include nodejs default libs.
     gulp = require('gulp'),
@@ -26,17 +36,24 @@ function compile(){
     return gulp
         .src(config.src_dir + '/' + config.src_file)
         .pipe(gulpif(config.sourcemaps, sourcemaps.init()))
+        // Minified.
         .pipe(sass({
           errLogToConsole: true,
-          outputStyle: config.outputStyle
+          outputStyle: config_minified.outputStyle
         }))
         .pipe(autoprefixer({
             'overrideBrowserslist' : config.browsers
         }))
-        .pipe(rename(config.dest_file))
+        .pipe(rename(config_minified.dest_file))
         .pipe(gulpif(config.sourcemaps, sourcemaps.write()))
         .pipe(gulp.dest(config.dest_dir))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.stream())
+        // Expanded
+        .pipe(sass({
+          outputStyle: config_expanded.outputStyle
+        }))
+        .pipe(rename(config_expanded.dest_file))
+        .pipe(gulp.dest(config.dest_dir));
 }
 
 // Static Server.
