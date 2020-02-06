@@ -94,10 +94,12 @@ $base_url = 'https://toto.com:8081/%PROJECT_FOLDER%/build';
 :warning: **If you want to access to your project on 8081 port (*default*) gulp have to be running** :warning:
 
 <details><summary>Are your ports free?</summary><p>
-Cloud9 open only 8080 8081 and 8082 ports. So you have to use one of this port 
+Cloud9 open only 8080 8081 and 8082 ports. So you have to use one of this port
+
 ```
 sudo netstat -tulpn | grep 8081
 ```
+
 If your 8081 port is used, you have to free it by updating your C9 Devops configuration according your profile installed (LAMP or Docker) :
 
 LAMP : `sudo salt-call state.apply profiles.lamp`
