@@ -23,12 +23,22 @@ var config_default = require('./config.default.json'),
     // Include nodejs default libs.
     gulp = require('gulp'),
 
-    // Include vendor libs.
+    // ========= Include vendor libs.
+    // Prefix css propoerties for different browsers.
     autoprefixer    = require('gulp-autoprefixer'),
+    // Refresh the browsers stylesheets without refresh the page.
     browserSync     = require('browser-sync').create(),
+    // Format the extanded css.
+    csscomb         = require('gulp-csscomb'),
+    // Manage conditions in gulp.
     gulpif          = require('gulp-if'),
+    // Set name of file to generate.
     rename          = require('gulp-rename'),
+    // Replace content in file.
+    replace         = require( 'gulp-replace' ),
+    // Generate CSS file from SCSS files.
     sass            = require('gulp-sass'),
+    // Indicate the provider SCSS file in generated CSS file.
     sourcemaps      = require('gulp-sourcemaps');
 
 // Compile sass into CSS & auto-inject into browsers.
@@ -45,15 +55,17 @@ function compile(){
             'overrideBrowserslist' : config.browsers
         }))
         .pipe(rename(config_minified.dest_file))
-        .pipe(gulpif(config.sourcemaps, sourcemaps.write()))
-        .pipe(gulp.dest(config.dest_dir))
+        .pipe(gulpif(config_minified.sourcemaps, sourcemaps.write()))
+        .pipe(gulp.dest(config_minified.dest_dir))
         .pipe(browserSync.stream())
         // Expanded
+        .pipe(csscomb())
         .pipe(sass({
           outputStyle: config_expanded.outputStyle
         }))
+        .pipe( replace( '@charset "UTF-8";\n', '' ) )
         .pipe(rename(config_expanded.dest_file))
-        .pipe(gulp.dest(config.dest_dir));
+        .pipe(gulp.dest(config_expanded.dest_dir));
 }
 
 // Static Server.
