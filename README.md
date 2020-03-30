@@ -27,7 +27,8 @@ git checkout -b gulp
 git clone https:``//github.com/julien-/gulp_browsersync
 mv gulp_browsersync/* .
 rm -rf gulp_browsersync/
-echo "config.default.json
+echo ".csscomb.json
+config.default.json
 config.local.json
 gulpfile.js
 package.json
