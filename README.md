@@ -26,6 +26,7 @@ cd gulp
 git checkout -b gulp
 git clone https:``//github.com/julien-/gulp_browsersync
 mv gulp_browsersync/* .
+mv gulp_browsersync/.csscomb.json .
 rm -rf gulp_browsersync/
 echo ".csscomb.json
 config.default.json
@@ -64,6 +65,7 @@ git remote get-url --all origin | git clone `xargs` --branch gulp gulp
 cd gulp
 git clone https://github.com/julien-/gulp_browsersync
 mv gulp_browsersync/* .
+mv gulp_browsersync/.csscomb.json .
 rm -rf gulp_browsersync/
 ```
 </p></details>
