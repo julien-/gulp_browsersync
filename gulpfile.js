@@ -1,4 +1,7 @@
 "use strict";
+const { series } = require('gulp');
+// Generate CSS file from SCSS files.
+const sass = require('gulp-sass')(require('sass'));
 try {
     var config_local = require('./config.local.json');
 } catch (error) {
@@ -35,9 +38,7 @@ var config_default = require('./config.default.json'),
     // Set name of file to generate.
     rename          = require('gulp-rename'),
     // Replace content in file.
-    replace         = require( 'gulp-replace' ),
-    // Generate CSS file from SCSS files.
-    sass            = require('gulp-sass'),
+    replace         = require( 'gulp-replace'),
     // Indicate the provider SCSS file in generated CSS file.
     sourcemaps      = require('gulp-sourcemaps');
 
@@ -90,7 +91,4 @@ function watch() {
 // Tasks.
 exports.watch = watch;
 exports.compile = compile;
-exports.default = function(){
-    compile();    
-    watch();   
-};
+exports.default = series(compile, watch);
